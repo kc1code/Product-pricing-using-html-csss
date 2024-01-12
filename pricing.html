@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Pricing</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&display=swap">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(90deg, #536dfe 0%, #00c6ff 100%);
+        }
+
+        header {
+            background-color: transparent;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 36px;
+            font-family: 'Baloo 2', cursive;
+        }
+
+        .pricing-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+        }
+
+        .pricing-card {
+            border: 1px solid #fff;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .pricing-card h2 {
+            color: #333;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .pricing-card p {
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .pricing-card .price {
+            font-size: 36px;
+            color: #536dfe;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            text-decoration: none;
+            color: white;
+            background-color: #536dfe;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            font-size: 18px;
+        }
+
+        .btn:hover {
+            background-color: #304ffe;
+        }
+
+        /* Customize currency and measurement units using CSS variables */
+        :root {
+            --currency-symbol: '$';
+            --measurement-unit: 'GB';
+        }
+
+        .pricing-card .price:before {
+            content: var(--currency-symbol);
+        }
+
+        .features li:before {
+            content: var(--measurement-unit);
+            margin-right: 5px;
+        }
+
+        /* User preferences form */
+        .preferences-form {
+            text-align: center;
+            margin: 20px;
+        }
+
+        .preferences-form label {
+            margin-right: 10px;
+            color: white;
+        }
+
+        .preferences-form select {
+            padding: 5px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Product Pricing</h1>
+    </header>
+
+    <!-- User preferences form -->
+    <div class="preferences-form">
+        <label for="currency">Choose Currency:</label>
+        <select id="currency" onchange="document.documentElement.style.setProperty('--currency-symbol', this.value)">
+            <option value="$">USD</option>
+            <option value="€">EUR</option>
+            <option value="£">GBP</option>
+        </select>
+
+        <label for="measurement">Choose Measurement Unit:</label>
+        <select id="measurement" onchange="document.documentElement.style.setProperty('--measurement-unit', this.value)">
+            <option value="GB">GB</option>
+            <option value="TB">TB</option>
+            <option value="PB">PB</option>
+        </select>
+    </div>
+
+    <div class="pricing-container">
+        <div class="pricing-card">
+            <h2>Basic Plan</h2>
+            <p>Perfect for getting started</p>
+            <div class="price">19.99/month</div>
+            <ul class="features">
+                <li>10 Storage</li>
+                <li>Basic Support</li>
+                <li>Limited Features</li>
+            </ul>
+            <a href="#" class="btn">Sign Up</a>
+        </div>
+
+        <div class="pricing-card">
+            <h2>Pro Plan</h2>
+            <p>Great for professionals</p>
+            <div class="price">39.99/month</div>
+            <ul class="features">
+                <li>50 Storage</li>
+                <li>Premium Support</li>
+                <li>Advanced Features</li>
+            </ul>
+            <a href="#" class="btn">Sign Up</a>
+        </div>
+
+        <div class="pricing-card">
+            <h2>Premium Plan</h2>
+            <p>For advanced users</p>
+            <div class="price">59.99/month</div>
+            <ul class="features">
+                <li>100 Storage</li>
+                <li>Priority Support</li>
+                <li>All Features Unlocked</li>
+            </ul>
+            <a href="#" class="btn">Sign Up</a>
+        </div>
+    </div>
+
+</body>
+</html>
+
+
+
+
